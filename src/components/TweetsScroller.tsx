@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Twitter } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Twitter, Users } from 'lucide-react';
 
 interface Tweet {
   id: string;
@@ -66,6 +66,35 @@ Start Building! 💪`,
   }
 ];
 
+export function CommunityCard() {
+  return (
+    <a
+      href="https://x.com/i/communities/1523681883384549376"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block w-full max-w-4xl mx-auto mb-6 group"
+    >
+      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-200 animated-border">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="bg-[#1DA1F2] rounded-full p-3">
+              <Users className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold">Join DevOps Community</h3>
+              <p className="text-gray-600">Connect with 17,000+ DevOps enthusiasts and professionals</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <Twitter className="h-5 w-5 text-[#1DA1F2]" />
+            <span className="text-[#1DA1F2] font-medium">Join Now →</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  );
+}
+
 export function TweetsScroller() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showLeftArrow, setShowLeftArrow] = React.useState(false);
@@ -100,21 +129,13 @@ export function TweetsScroller() {
 
   return (
     <div className="relative max-w-7xl mx-auto px-4 py-8">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2">
-          <Twitter className="h-5 w-5 text-[#1DA1F2]" />
-          <h2 className="text-xl font-semibold">Latest Tweets</h2>
-        </div>
-        <a
-          href="https://x.com/i/communities/1523681883384549376"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-blue-500 hover:text-blue-600 flex items-center gap-1"
-        >
-          Join DevOps Community (17k+)
-          <Twitter className="h-4 w-4" />
-        </a>
+      <CommunityCard />
+      
+      <div className="flex items-center gap-2 mb-4">
+        <Twitter className="h-5 w-5 text-[#1DA1F2]" />
+        <h2 className="text-xl font-semibold">Latest Tweets</h2>
       </div>
+
       <div className="relative group">
         {showLeftArrow && (
           <button
@@ -146,8 +167,11 @@ export function TweetsScroller() {
               rel="noopener noreferrer"
               className="flex-none w-[400px] bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-200 animated-border snap-center"
             >
-              <div className="whitespace-pre-line text-gray-800 text-sm">
-                {tweet.content}
+              <div className="flex justify-between items-start">
+                <div className="whitespace-pre-line text-gray-800 text-sm flex-1">
+                  {tweet.content}
+                </div>
+                <Twitter className="h-4 w-4 text-[#1DA1F2] flex-shrink-0 ml-4" />
               </div>
               <div className="mt-4 text-sm text-gray-500">
                 {tweet.date}
