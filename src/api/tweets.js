@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Twitter API v2 configuration
-const TWITTER_BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAAHCDrwEAAAAANJPnMxrKXGKWMCRTlMgZHBJgEBU%3DyXWYTYFPnVWPvPLKBWLXKdDwgOdBXTDg4Uu6VRdDUEKQPvKkVa';
+const TWITTER_BEARER_TOKEN = import.meta.env.VITE_TWITTER_BEARER_TOKEN;
 
 export async function fetchUserTweets(username = 'ghumare64') {
   try {
