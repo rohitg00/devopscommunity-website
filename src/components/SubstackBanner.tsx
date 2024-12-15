@@ -27,10 +27,10 @@ export function SubstackBanner() {
                     className="infinity-path infinity-path-1"
                     d="M30,20 C30,12 38,12 40,20 C42,28 50,28 50,20 C50,12 58,12 60,20 C62,28 70,28 70,20"
                   />
-                  <path
+                  {/* <path
                     className="infinity-path infinity-path-2"
                     d="M30,20 C30,28 38,28 40,20 C42,12 50,12 50,20 C50,28 58,28 60,20 C62,12 70,12 70,20"
-                  />
+                  /> */}
                 </svg>
               </div>
               <div className="text-center text-sm text-gray-600 mt-3">
