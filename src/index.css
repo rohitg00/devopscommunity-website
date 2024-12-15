@@ -36,57 +36,38 @@
 }
 
 /* DevOps Infinity Animation */
+.devops-infinity {
+  width: 100px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.infinity-path {
+  fill: none;
+  stroke: url(#gradient);
+  stroke-width: 2;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 2px #FF4D6A);
+  animation: moveParticles 4s linear infinite, glowEffect 2s ease-in-out infinite;
+  stroke-dasharray: 10, 5;
+}
+
 @keyframes moveParticles {
-  0% {
-    stroke-dashoffset: 1000;
+  from {
+    stroke-dashoffset: 60;
   }
-  100% {
+  to {
     stroke-dashoffset: 0;
   }
 }
 
 @keyframes glowEffect {
   0%, 100% {
-    filter: drop-shadow(0 0 2px rgba(255, 77, 106, 0.6)) 
-            drop-shadow(0 0 4px rgba(255, 77, 106, 0.4));
+    filter: drop-shadow(0 0 2px #FF4D6A);
+    opacity: 0.8;
   }
   50% {
-    filter: drop-shadow(0 0 4px rgba(255, 133, 71, 0.8)) 
-            drop-shadow(0 0 8px rgba(255, 133, 71, 0.6));
+    filter: drop-shadow(0 0 4px #FF8547);
+    opacity: 1;
   }
-}
-
-.devops-infinity {
-  position: relative;
-  width: 180px;
-  height: 70px;
-  margin: 15px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.infinity-path {
-  fill: none;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-dasharray: 10, 20;
-  animation: moveParticles 8s linear infinite,
-             glowEffect 3s ease-in-out infinite;
-}
-
-.infinity-path-1 {
-  stroke: #FF4D6A;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: moveParticles 8s linear infinite;
-  filter: drop-shadow(0 0 3px rgba(255, 77, 106, 0.8));
-}
-
-.infinity-path-2 {
-  stroke: #FF8547;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: moveParticles 8s linear infinite reverse;
-  filter: drop-shadow(0 0 3px rgba(255, 133, 71, 0.8));
 }
