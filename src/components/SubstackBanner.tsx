@@ -22,7 +22,23 @@ export function SubstackBanner() {
             
           {/* Infinity Symbol */}
           <div className="flex-grow flex items-center justify-center min-h-[120px]">
-            <svg className="devops-infinity w-40 h-full" viewBox="0 0 200 100">
+            <svg className="devops-infinity w-full h-full" viewBox="0 0 200 100">
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#FF4D6A" />
+                  <stop offset="100%" stopColor="#FF8547" />
+                </linearGradient>
+              </defs>
+              <path
+                className="infinity-path"
+                d="M46,50 C46,30 66,30 76,50 C86,70 106,70 106,50 C106,30 86,30 76,50 C66,70 46,70 46,50"
+                fill="url(#gradient)"
+                transform="scale(0.5, 1)"
+              />
+            </svg>
+          </div>
+          <div className="flex-grow flex items-center justify-center min-h-[120px]">
+            <svg className="devops-infinity w-full h-full" viewBox="0 0 200 100">
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#FF4D6A" />
