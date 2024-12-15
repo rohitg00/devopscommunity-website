@@ -18,6 +18,14 @@ export function SubstackBanner() {
             <p className="text-sm text-gray-500">
               Get curated insights and career tips
             </p>
+            
+            {/* DevOps Infinity Symbol */}
+            <div className="my-4 opacity-70 hover:opacity-100 transition-opacity duration-300">
+              <div className="devops-infinity"></div>
+              <div className="text-center text-xs text-gray-500 mt-2">
+                Continuous Integration • Continuous Delivery
+              </div>
+            </div>
           </div>
           <a
             href="https://thatdevopsguy.substack.com"
