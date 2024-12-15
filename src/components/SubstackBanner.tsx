@@ -19,19 +19,21 @@ export function SubstackBanner() {
               Get curated insights and career tips
             </p>
             
-            {/* DevOps Infinity Symbol */}
-            <div className="my-6 hover:scale-105 transition-transform duration-300">
-              <div className="devops-infinity">
-                <svg viewBox="0 0 100 40" width="100%" height="100%">
-                  <path
-                    className="infinity-path"
-                    d="M30,20 C30,12 38,12 40,20 C42,28 50,28 50,20 C50,12 58,12 60,20 C62,28 70,28 70,20"
-                  />
-                </svg>
-              </div>
-              <div className="text-center text-sm text-gray-600 mt-3">
-                <span className="font-semibold">DevOps Community Newsletter</span>
-              </div>
+            {/* Infinity Symbol */}
+            <div className="my-6">
+              <svg className="devops-infinity" viewBox="0 0 100 40">
+                <defs>
+                  <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#FF4D6A" />
+                    <stop offset="100%" stopColor="#FF8547" />
+                  </linearGradient>
+                </defs>
+                <path
+                  className="infinity-path"
+                  d="M30,20 C30,12 38,12 40,20 C42,28 50,28 50,20 C50,12 58,12 60,20 C62,28 70,28 70,20"
+                  fill="url(#gradient)"
+                />
+              </svg>
             </div>
           </div>
           <a

@@ -37,24 +37,25 @@
 
 /* DevOps Infinity Animation */
 .devops-infinity {
-  width: 100px;
+  width: 120px;
   height: 40px;
   margin: 0 auto;
+  display: block;
 }
 
 .infinity-path {
   fill: none;
   stroke: url(#gradient);
-  stroke-width: 2;
+  stroke-width: 2.5;
   stroke-linecap: round;
-  filter: drop-shadow(0 0 2px #FF4D6A);
-  animation: moveParticles 4s linear infinite, glowEffect 2s ease-in-out infinite;
-  stroke-dasharray: 10, 5;
+  filter: drop-shadow(0 0 3px #FF4D6A);
+  animation: moveParticles 3s linear infinite, glowEffect 2s ease-in-out infinite;
+  stroke-dasharray: 8, 4;
 }
 
 @keyframes moveParticles {
   from {
-    stroke-dashoffset: 60;
+    stroke-dashoffset: 48;
   }
   to {
     stroke-dashoffset: 0;
@@ -64,7 +65,7 @@
 @keyframes glowEffect {
   0%, 100% {
     filter: drop-shadow(0 0 2px #FF4D6A);
-    opacity: 0.8;
+    opacity: 0.9;
   }
   50% {
     filter: drop-shadow(0 0 4px #FF8547);
