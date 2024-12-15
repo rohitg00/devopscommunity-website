@@ -22,7 +22,16 @@ export function SubstackBanner() {
             {/* DevOps Infinity Symbol */}
             <div className="my-6 hover:scale-105 transition-transform duration-300">
               <div className="devops-infinity">
-                <div className="infinity-loop"></div>
+                <svg viewBox="0 0 100 40" width="100%" height="100%">
+                  <path
+                    className="infinity-path infinity-path-1"
+                    d="M30,20 C30,12 38,12 40,20 C42,28 50,28 50,20 C50,12 58,12 60,20 C62,28 70,28 70,20"
+                  />
+                  <path
+                    className="infinity-path infinity-path-2"
+                    d="M30,20 C30,28 38,28 40,20 C42,12 50,12 50,20 C50,28 58,28 60,20 C62,12 70,12 70,20"
+                  />
+                </svg>
               </div>
               <div className="text-center text-sm text-gray-600 mt-3">
                 <span className="font-semibold">DevOps Community Newsletter</span>
