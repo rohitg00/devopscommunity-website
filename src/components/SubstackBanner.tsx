@@ -20,10 +20,10 @@ export function SubstackBanner() {
             </p>
             
             {/* DevOps Infinity Symbol */}
-            <div className="my-4 opacity-70 hover:opacity-100 transition-opacity duration-300">
+            <div className="my-6 opacity-80 hover:opacity-100 transition-opacity duration-300">
               <div className="devops-infinity"></div>
-              <div className="text-center text-xs text-gray-500 mt-2">
-                Continuous Integration • Continuous Delivery
+              <div className="text-center text-sm text-gray-600 mt-2">
+                <span className="font-semibold">DevOps Community Newsletter</span>
               </div>
             </div>
           </div>

@@ -36,42 +36,26 @@
 }
 
 /* DevOps Infinity Animation */
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
+@keyframes flow {
+  0% {
+    background-position: 0% 50%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
 .devops-infinity {
   position: relative;
-  width: 100px;
-  height: 50px;
-  margin: 10px auto;
-}
-
-.devops-infinity::before,
-.devops-infinity::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 30px;
-  border: 4px solid;
-  border-radius: 50% 50% 0 50%;
-  border-color: #FF4D6A transparent transparent #FF4D6A;
-  transform-origin: 100% 100%;
-  animation: rotate 3s linear infinite;
-}
-
-.devops-infinity::after {
-  left: auto;
-  right: 0;
-  border-radius: 50% 50% 50% 0;
-  border-color: #FF8547 #FF8547 transparent transparent;
-  transform-origin: 0 100%;
-  animation: rotate 3s linear infinite reverse;
+  width: 160px;
+  height: 40px;
+  margin: 15px auto;
+  background: linear-gradient(90deg, #FF4D6A, #FF8547, #FF4D6A);
+  background-size: 200% auto;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 30'%3E%3Cpath d='M30,15c0-8.3-6.7-15-15-15S0,6.7,0,15s6.7,15,15,15c4.1,0,7.8-1.7,10.5-4.3l49,0c2.7,2.7,6.4,4.3,10.5,4.3c8.3,0,15-6.7,15-15s-6.7-15-15-15c-4.1,0-7.8,1.7-10.5,4.3l-49,0C22.8,1.7,19.1,0,15,0'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 30'%3E%3Cpath d='M30,15c0-8.3-6.7-15-15-15S0,6.7,0,15s6.7,15,15,15c4.1,0,7.8-1.7,10.5-4.3l49,0c2.7,2.7,6.4,4.3,10.5,4.3c8.3,0,15-6.7,15-15s-6.7-15-15-15c-4.1,0-7.8,1.7-10.5,4.3l-49,0C22.8,1.7,19.1,0,15,0'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation: flow 3s linear infinite;
 }
