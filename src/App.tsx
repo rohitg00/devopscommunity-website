@@ -82,12 +82,14 @@ function App() {
       <Header />
       <main className="flex-grow">
         <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-8">
-            <div className="lg:col-span-3">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
+            <div className="lg:col-span-8">
               <PromotionBanner />
             </div>
-            <div className="lg:col-span-1">
-              <SubstackBanner />
+            <div className="lg:col-span-4">
+              <div className="h-full flex flex-col justify-center">
+                <SubstackBanner />
+              </div>
             </div>
           </div>
           <SearchBar
