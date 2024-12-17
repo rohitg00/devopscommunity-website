@@ -101,6 +101,25 @@ export function TweetsScroller() {
   const [showRightArrow, setShowRightArrow] = React.useState(true);
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollContainerRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth) {
+          scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          const scrollAmount = 300;
+          scrollContainerRef.current.scrollTo({
+            left: scrollLeft + scrollAmount,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }, 5000); // Scroll every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
@@ -133,7 +152,7 @@ export function TweetsScroller() {
       
       <div className="flex items-center gap-2 mb-4">
         <Twitter className="h-5 w-5 text-[#1DA1F2]" />
-        <h2 className="text-xl font-semibold">Latest Tweets</h2>
+        <h2 className="text-xl font-semibold">DevOps Tweets</h2>
       </div>
 
       <div className="relative group">

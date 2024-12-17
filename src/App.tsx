@@ -7,6 +7,8 @@ import { Footer } from './components/Footer';
 import { PromotionBanner } from './components/PromotionBanner';
 import { SubstackBanner } from './components/SubstackBanner';
 import { TweetsScroller } from './components/TweetsScroller';
+import { DevOpsProjectTweets } from './components/DevOpsProjectTweets';
+import { DevOpsTools } from './components/DevOpsTools';
 import { Resource } from './types/Resource';
 import { fetchResources } from './utils/api';
 
@@ -102,7 +104,9 @@ function App() {
             filteredCount={filteredResources.length}
           />
           <ResourceList resources={filteredResources} />
+          <DevOpsProjectTweets />
           <TweetsScroller />
+          <DevOpsTools />
         </div>
       </main>
       <Footer />
