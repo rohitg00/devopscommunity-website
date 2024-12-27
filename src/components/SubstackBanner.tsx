@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
 export function SubstackBanner() {
   return (
@@ -15,12 +16,33 @@ export function SubstackBanner() {
             <p className="text-sm text-gray-600 mb-3">
               Top rated DevOps newsletter with 8,000+ members
             </p>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 mb-4">
               Get curated insights and career tips
             </p>
             
+            {/* Recent Issue Link */}
+            <a
+              href="https://thatdevopsguy.substack.com/latest"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:bg-gray-50 rounded-lg p-4 transition-colors duration-200 border border-gray-100"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex-1">
+                  <p className="text-xs text-[#FF4D6A] font-medium mb-2">RECENT ISSUE</p>
+                  <h4 className="text-base font-medium text-gray-800 mb-2">
+                    Latest DevOps Trends and Best Practices
+                  </h4>
+                  <p className="text-sm text-gray-600 line-clamp-2">
+                    Discover the latest tools, techniques, and best practices in the DevOps ecosystem. Learn how to improve your workflow and stay ahead in your career.
+                  </p>
+                </div>
+                <ArrowUpRight className="h-5 w-5 text-gray-400 flex-shrink-0 mt-1" />
+              </div>
+            </a>
+
             {/* DevOps Infinity Symbol */}
-            <div className="my-6 hover:scale-105 transition-transform duration-300">
+            <div className="mt-8 mb-6 hover:scale-105 transition-transform duration-300">
               <div className="devops-infinity">
                 <svg viewBox="0 0 100 40" width="100%" height="100%">
                   <path

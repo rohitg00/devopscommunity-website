@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import Fuse from 'fuse.js';
 import { SearchBar } from './components/SearchBar';
 import { ResourceList } from './components/ResourceList';
@@ -9,6 +9,7 @@ import { SubstackBanner } from './components/SubstackBanner';
 import { TweetsScroller } from './components/TweetsScroller';
 import { DevOpsProjectTweets } from './components/DevOpsProjectTweets';
 import { DevOpsTools } from './components/DevOpsTools';
+import { DevOpsToolsCollection } from './components/DevOpsToolsCollection';
 import { Resource } from './types/Resource';
 import { fetchResources } from './utils/api';
 
@@ -86,7 +87,10 @@ function App() {
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
             <div className="lg:col-span-8">
-              <PromotionBanner />
+              <div className="space-y-4">
+                <DevOpsToolsCollection />
+                <PromotionBanner />
+              </div>
             </div>
             <div className="lg:col-span-4">
               <div className="h-full flex flex-col justify-center">
