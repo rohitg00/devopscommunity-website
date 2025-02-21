@@ -12,6 +12,7 @@ import { DevOpsTools } from './components/DevOpsTools';
 import { DevOpsToolsCollection } from './components/DevOpsToolsCollection';
 import { Resource } from './types/Resource';
 import { fetchResources } from './utils/api';
+import { SponsorBanner } from './components/SponsorBanner';
 
 function App() {
   const [resources, setResources] = useState<Resource[]>([]);
@@ -82,6 +83,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#FFF5F7] flex flex-col">
+      <SponsorBanner />
       <Header />
       <main className="flex-grow">
         <div className="container mx-auto px-4 py-8">
