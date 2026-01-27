@@ -6,7 +6,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Resource } from './types/Resource';
 import { fetchResources } from './utils/api';
-import { ArrowRight, Wrench, Terminal, FileText } from 'lucide-react';
+import { Terminal, Wrench, FileText, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 function App() {
@@ -70,74 +70,106 @@ function App() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
-        <div className="flex items-center gap-3">
-          <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
-          <span className="text-[#a1a1aa] text-sm font-mono">Loading...</span>
+      <div className="min-h-screen bg-[#09090b] flex items-center justify-center">
+        <div className="flex items-center gap-2 font-mono text-sm text-[#52525b]">
+          <span className="text-[#22c55e]">$</span>
+          <span>loading</span>
+          <span className="cursor-blink">_</span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] flex flex-col">
+    <div className="min-h-screen bg-[#09090b] flex flex-col noise-overlay relative">
       <Header />
       
-      <main className="flex-grow">
+      <main className="flex-grow pt-14">
         {/* Hero Section */}
-        <section className="border-b border-[#262626]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse-slow" />
-                <span className="text-sm font-mono text-[#71717a]">Community-driven resources</span>
+        <section className="relative overflow-hidden">
+          {/* Grid background */}
+          <div className="absolute inset-0 grid-pattern opacity-50" />
+          
+          <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-32">
+            {/* Terminal-style intro */}
+            <div className="font-mono text-xs text-[#52525b] mb-6 fade-up">
+              <span className="text-[#22c55e]">~/devops</span>
+              <span className="text-[#3f3f46]"> $ </span>
+              <span className="text-[#a1a1aa]">cat welcome.md</span>
+            </div>
+
+            {/* Main heading */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 fade-up fade-up-delay-1">
+              <span className="text-white">Learn</span>
+              <span className="text-[#22c55e]">.</span>
+              <span className="text-white">Build</span>
+              <span className="text-[#22c55e]">.</span>
+              <span className="text-white">Ship</span>
+              <span className="text-[#22c55e]">.</span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-[#a1a1aa] max-w-2xl mb-10 fade-up fade-up-delay-2">
+              The <span className="accent-underline text-white">open-source</span> collection of DevOps resources, 
+              tools, and guides curated by engineers, for engineers.
+            </p>
+
+            {/* Stats */}
+            <div className="flex flex-wrap gap-8 mb-10 fade-up fade-up-delay-3">
+              <div className="flex items-baseline gap-2">
+                <span className="text-3xl font-bold text-white">{resources.length}</span>
+                <span className="text-sm text-[#52525b]">resources</span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                DevOps Resources
-                <br />
-                <span className="text-[#71717a]">for Engineers</span>
-              </h1>
-              <p className="text-lg text-[#a1a1aa] mb-8 max-w-2xl">
-                Curated collection of DevOps tools, guides, roadmaps, and best practices. 
-                Everything you need to level up your infrastructure skills.
-              </p>
-              
-              {/* Quick Links */}
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href="https://tools.devopscommunity.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2.5 bg-white text-black text-sm font-medium rounded-md hover:bg-[#e5e5e5] transition-colors"
-                >
-                  <Wrench className="h-4 w-4" />
-                  Explore Tools
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-                <a
-                  href="https://interview.devopscommunity.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2.5 bg-[#1a1a1a] text-white text-sm font-medium border border-[#262626] rounded-md hover:bg-[#262626] hover:border-[#404040] transition-colors"
-                >
-                  <Terminal className="h-4 w-4" />
-                  Interview Prep
-                </a>
-                <Link
-                  to="/kubernetes-report-2026"
-                  className="flex items-center gap-2 px-4 py-2.5 bg-[#1a1a1a] text-white text-sm font-medium border border-[#262626] rounded-md hover:bg-[#262626] hover:border-[#404040] transition-colors"
-                >
-                  <FileText className="h-4 w-4" />
-                  K8s Report 2026
-                </Link>
+              <div className="flex items-baseline gap-2">
+                <span className="text-3xl font-bold text-white">{categoriesWithCount.length}</span>
+                <span className="text-sm text-[#52525b]">categories</span>
               </div>
+              <div className="flex items-baseline gap-2">
+                <span className="text-3xl font-bold text-[#22c55e]">Free</span>
+                <span className="text-sm text-[#52525b]">forever</span>
+              </div>
+            </div>
+
+            {/* Action buttons */}
+            <div className="flex flex-wrap gap-3 fade-up fade-up-delay-3">
+              <a
+                href="https://tools.devopscommunity.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 px-5 py-2.5 bg-white text-[#09090b] text-sm font-medium rounded hover:bg-[#e4e4e7] transition-colors"
+              >
+                <Wrench className="h-4 w-4" />
+                DevOps Tools
+                <ExternalLink className="h-3 w-3 opacity-50 group-hover:opacity-100 transition-opacity" />
+              </a>
+              <a
+                href="https://interview.devopscommunity.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 px-5 py-2.5 bg-transparent text-white text-sm font-medium border border-[#3f3f46] rounded hover:bg-[#18181b] hover:border-[#52525b] transition-all"
+              >
+                <Terminal className="h-4 w-4" />
+                Interview Prep
+              </a>
+              <Link
+                to="/kubernetes-report-2026"
+                className="group flex items-center gap-2 px-5 py-2.5 bg-transparent text-[#22c55e] text-sm font-medium border border-[#22c55e]/30 rounded hover:bg-[#22c55e]/10 hover:border-[#22c55e]/50 transition-all glow-border"
+              >
+                <FileText className="h-4 w-4" />
+                K8s Report 2026
+              </Link>
             </div>
           </div>
         </section>
 
         {/* Resources Section */}
-        <section className="py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="border-t border-[#27272a]">
+          <div className="max-w-6xl mx-auto px-6 py-12">
+            <div className="flex items-center justify-between mb-8">
+              <div className="font-mono text-xs text-[#52525b]">
+                <span className="text-[#22c55e]">$</span> ls resources/
+              </div>
+            </div>
+            
             <SearchBar
               searchTerm={searchTerm}
               onSearchChange={setSearchTerm}

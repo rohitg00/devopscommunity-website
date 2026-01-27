@@ -28,20 +28,29 @@ export function SearchBar({
   return (
     <div className="mb-8">
       <div className="relative">
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 flex items-center pl-4 pointer-events-none">
+          <span className="font-mono text-xs text-[#22c55e] mr-2">$</span>
+          <Search className="h-4 w-4 text-[#52525b]" />
+        </div>
         <input
           type="text"
-          placeholder="Search resources..."
+          placeholder="grep -i 'your search'..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-full px-4 py-3 pl-11 rounded-lg border border-[#262626] bg-[#111111] text-white placeholder-[#71717a] focus:outline-none focus:border-[#404040] focus:ring-1 focus:ring-[#404040] transition-all"
+          className="w-full pl-16 pr-4 py-3 font-mono text-sm bg-[#18181b] border border-[#27272a] text-white placeholder-[#52525b] focus:outline-none focus:border-[#3f3f46] focus:ring-1 focus:ring-[#3f3f46] transition-all"
         />
-        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#71717a] h-4 w-4" />
       </div>
       <div className="mt-4 flex items-center justify-between">
-        <div className="text-sm text-[#71717a]">
-          <span className="text-[#a1a1aa] font-medium">{filteredCount}</span> of {totalResources} resources
-          {searchTerm && <span className="text-[#71717a]"> matching "<span className="text-[#a1a1aa]">{searchTerm}</span>"</span>}
-          {selectedCategory && <span className="text-[#71717a]"> in <span className="text-[#a1a1aa]">{selectedCategory}</span></span>}
+        <div className="font-mono text-xs text-[#52525b]">
+          <span className="text-[#a1a1aa]">{filteredCount}</span>
+          <span className="text-[#3f3f46]"> / </span>
+          <span>{totalResources}</span>
+          {searchTerm && (
+            <span className="text-[#3f3f46]"> | matching "{searchTerm}"</span>
+          )}
+          {selectedCategory && (
+            <span className="text-[#3f3f46]"> | in <span className="text-[#22c55e]">{selectedCategory}</span></span>
+          )}
         </div>
         <FilterDropdown
           categories={categories}

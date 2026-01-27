@@ -7,14 +7,18 @@ interface ResourceListProps {
 
 export function ResourceList({ resources }: ResourceListProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#27272a]">
       {resources.length === 0 ? (
-        <div className="col-span-full text-center py-16">
-          <p className="text-[#71717a] text-sm">No resources found. Try adjusting your search.</p>
+        <div className="col-span-full bg-[#09090b] text-center py-16">
+          <div className="font-mono text-sm text-[#52525b]">
+            <span className="text-[#22c55e]">$</span> No results found
+          </div>
         </div>
       ) : (
         resources.map((resource, index) => (
-          <ResourceCard key={index} resource={resource} />
+          <div key={index} className="bg-[#09090b]">
+            <ResourceCard resource={resource} />
+          </div>
         ))
       )}
     </div>
