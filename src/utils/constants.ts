@@ -6,4 +6,4 @@ export const THEME_COLORS = {
   accent: '#22c55e',
 };
 
-export const LOGO_URL = '/logo.png';
+export const LOGO_URL = '/logo.svg';

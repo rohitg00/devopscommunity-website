@@ -1,0 +1,14 @@
+<svg width="48" height="28" viewBox="0 0 48 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left hexagon -->
+  <path d="M12 2L22 7.5V18.5L12 24L2 18.5V7.5L12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+  <!-- Right hexagon -->
+  <path d="M36 4L46 9.5V20.5L36 26L26 20.5V9.5L36 4Z" stroke="currentColor" stroke-width="2" fill="none"/>
+  <!-- Connecting infinity bridge -->
+  <path d="M22 12L26 14" stroke="currentColor" stroke-width="2"/>
+  <path d="M22 14L26 12" stroke="currentColor" stroke-width="2"/>
+  <!-- Circuit dots -->
+  <circle cx="12" cy="2" r="1.5" fill="currentColor"/>
+  <circle cx="36" cy="4" r="1.5" fill="currentColor"/>
+  <circle cx="2" cy="13" r="1" fill="currentColor"/>
+  <circle cx="46" cy="15" r="1" fill="currentColor"/>
+</svg>

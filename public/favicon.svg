@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simplified hexagon infinity for favicon -->
+  <path d="M10 6L18 10V18L10 22L2 18V10L10 6Z" stroke="#22c55e" stroke-width="2" fill="none"/>
+  <path d="M22 10L30 14V22L22 26L14 22V14L22 10Z" stroke="#22c55e" stroke-width="2" fill="none"/>
+  <!-- Bridge -->
+  <path d="M18 13L14 15M18 15L14 13" stroke="#22c55e" stroke-width="1.5"/>
+  <!-- Dots -->
+  <circle cx="10" cy="6" r="1.5" fill="#22c55e"/>
+  <circle cx="22" cy="10" r="1.5" fill="#22c55e"/>
+</svg>
